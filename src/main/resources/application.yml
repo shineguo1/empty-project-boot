@@ -32,5 +32,13 @@ mybatis-plus:
   # mapper.xml实体类不用写全路径类名
   type-aliases-package: com.blockin.subgraph.dal.**.model
   config-location: classpath:spring/mybatis.xml
-
+  configuration:
+    call-setters-on-nulls: true
+    cache-enabled: true
+    lazy-loading-enabled: true
+    multiple-result-sets-enabled: true
+    use-column-label: true
+    use-generated-keys: true
+    default-executor-type: simple
+    default-statement-timeout: 25000
 
