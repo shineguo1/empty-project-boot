@@ -1,0 +1,16 @@
+mysql:
+  data:
+    core:
+      url: jdbc:mysql://localhost:3306/activiti?characterEncoding=utf-8&serverTimezone=UTC
+      db:
+        driver: com.mysql.cj.jdbc.Driver
+        username: root
+        write:
+          password: 123456
+        maxPoolSize: 500
+        minPoolSize: 1
+        connectionTimeout: 600000
+        idleTimeout: 600000
+        maxLifetime: 1800000
+        connectionInitSql: set names utf8mb4
+        connectionTestQuery: SELECT 1 FROM DUAL

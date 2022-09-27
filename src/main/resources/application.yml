@@ -4,17 +4,19 @@
 #management.endpoint.health.show-details=always
 
 spring:
+  profiles:
+    active: @profileActive@
   security:
     user:
       name: admin
       password: 123456
   application:
     name: spring-boot-quick-starter
-  datasource:
-    url: jdbc:mysql://localhost:3306/activiti?characterEncoding=utf-8&serverTimezone=UTC
-    username: root
-    password: 123456
-    driverClassName: com.mysql.cj.jdbc.Driver
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/activiti?characterEncoding=utf-8&serverTimezone=UTC
+#    username: root
+#    password: 123456
+#    driverClassName: com.mysql.cj.jdbc.Driver
 #spring.datasource.type = com.zaxxer.hikari.HikariDataSource
   main:
     allow-bean-definition-overriding: true
@@ -24,10 +26,11 @@ server:
 
 #eureka.client.service-url.defaultZone=http://localhost:7000/eureka/
 
-mybatis:
-  mapperLocations: classpath:mapper/*.xml
-# mapper.xml实体类不用写全路径类名
-#  type-aliases-package: gxj.study.dal.entity
 
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  # mapper.xml实体类不用写全路径类名
+  type-aliases-package: com.blockin.subgraph.dal.**.model
+  config-location: classpath:spring/mybatis.xml
 
 
